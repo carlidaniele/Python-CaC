@@ -42,10 +42,9 @@ header {
 
 main {
     background-color: rgb(246, 246, 247);
-
 }
 
-.card-container {
+.article1, .article2{
     width: auto;
     height: auto;
     background-color: rgb(52, 52, 51);
@@ -86,7 +85,7 @@ h2,h3{
 
 p{
     font-family: 'Gabarito', cursive;
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin: 1rem 2rem;
     text-align: center;
 }
@@ -95,6 +94,16 @@ p{
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(10, 1fr);
+}
+
+.lista-img-main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.lista-img-main > *{
+    margin: 1rem;
 }
 
 li{
@@ -112,7 +121,7 @@ li{
     padding: 1rem;
     transition: all 0.4s ease;
     border-radius: 2rem;
-    background-color: rgb(39, 39, 39);;
+    background-color: rgb(39, 39, 39);
     overflow: hidden;
     box-sizing: border-box;
     max-width: 1230px;
@@ -133,6 +142,18 @@ li{
     display: block;
     object-fit: cover;
     object-position: center center;
+}
+
+.item-img-main{
+    height: 13rem;
+    display: block;
+    object-fit: cover;
+    object-position: center center;
+
+}
+
+.item-img-main:hover{
+    box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, 0.562);
 }
 
 .slider .puntos {
@@ -186,6 +207,74 @@ footer {
     justify-content: center;
     background-color: rgb(39, 39, 39);
 }
+
+.header{
+    grid-area: header;
+}
+
+.main{
+    grid-area: main;
+}
+
+.article1{
+    grid-area: article1;
+}
+
+.article2{
+    grid-area: article2;
+}
+
+.section{
+    grid-area: section;
+}
+
+.footer{
+    grid-area: footer;
+}
+
+#grid-contenedor > *{
+    box-sizing: border-box;
+}
+
+#grid-contenedor{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "header header"
+    "main main"
+    "article1 article1"
+    "article2 article2"
+    "section section"
+    "footer footer"
+    ;
+}
+
+@media (min-width: 600px){
+    #grid-contenedor{
+        grid-template-areas: 
+        "header header"
+        "main main"
+        "article1 article2"
+        "article1 article2"
+        "section section"
+        "footer footer"
+        ;
+    }
+}
+
+@media (min-width: 1500px){
+    #grid-contenedor{
+        grid-template-areas: 
+        "header header"
+        "main article1"
+        "main article2"
+        "section section"
+        "footer footer"
+        ;
+    }
+}
+
 
 @media screen and (max-width: 1350px) {
     .slider .puntos {
