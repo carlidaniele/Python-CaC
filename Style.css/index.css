@@ -44,6 +44,22 @@ main {
     background-color: rgb(246, 246, 247);
 }
 
+.link {
+    color: aliceblue;
+    
+}
+
+.link :hover{
+    color: #f9ce00;
+}
+
+.avances{
+    text-align: center;
+     padding: 0.5rem;
+     margin-top: 0.5rem;
+ 
+ }
+
 .article1, .article2{
     width: auto;
     height: auto;
