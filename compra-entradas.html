@@ -67,47 +67,73 @@
             <h1>COMPRA DE ENTRADAS</h1>
         </div>
 
-        < <form action="" name="formulario" id="formulario">
-            <input type="text" id="texto1" name="texto1" value="" placeholder="nombre">
-            <input type="text" id="texto2" value="" placeholder="apellido">
-            <label for="email">Me gustaría que me proporcionara una dirección de correo electrónico:<label>
-                <input type="email" id="email" name="mail">
+        <form action="" name="formulario" id="formulario">
+            <label for="Nombre">Nombre:<label>
+                    <input type="text" class="cajasTexto" id="texto1" name="texto1" value="" placeholder="nombre" required minlength="3" maxlength="20">
+                        
+                    <label for="Apellido">Apellido:<label>
+                            <input type="text" class="cajasTexto" id="texto2" value="" placeholder="apellido" required minlength="3" maxlength="20">
+                            <label for="email">email:<label>
+                                    <input type="email" class="cajasTexto" id="email" name="mail" placeholder="email" required minlength="12" maxlength="50">
 
 
-            <label>Cantidad</label>
-            <input type="number" type="form-control" id="cantidad" placeholder="Cantidad" min="0">
 
-            <div>
-                <label>Pelicula</label>
-                <select class="form-select" name="Pelicula" id="pelicula">
-                    <option value="Estudiante">La Monja 2</option>
-                    <option value="Trainee">Los Indestructibles 4</option>
-                    <option value="Junior">Caceria en venecia</option>
-                    <option value="Junior">Oppenheimer</option>
-                    <option value="Junior">Puan</option>
-                    <option value="Junior">No Me Rompan</option>
-                </select>
-            </div>
-            <div>
-                <label>Categoria</label>
-                <select class="form-select" name="Categoria" id="categoria">
-                    <option value="Menores">Entrada Menores</option>
-                    <option value="Mayores">Entrada Mayores</option>
-                    <option value="General">Entrada General</option>
-                    <option value="CaC">Entrada CaC</option>
-                </select>
-            </div>
-            <div>
-                <input type="text" class="form-control result" id="total" placeholder="Total a pagar:$" disabled>
-            </div>
+                                    <div id="compra">
+                                        <label>Cantidad</label>
+                                        <input type="number" type="form-control" id="cantidad" placeholder="1" min="1">
 
-            <div>
-                <button type="reset" id="boton1">Eliminar</button>
-                <button type="button" id="boton2" onclick="resumen()">Resumen</button>
-                <button type="button" id="botoncompra">COMPRAR</button>
-                <button>Enviar</button>
-            </div>
-            </form>
+                                        <div>
+                                            <label>Pelicula</label>
+                                            <select class="form-select" name="Pelicula" id="pelicula">
+                                                <option value="Estudiante">La Monja 2</option>
+                                                <option value="Trainee">Los Indestructibles 4</option>
+                                                <option value="Junior">Caceria en venecia</option>
+                                                <option value="Junior">Oppenheimer</option>
+                                                <option value="Junior">Puan</option>
+                                                <option value="Junior">No Me Rompan</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label>Categoria</label>
+                                            <select class="form-select" name="Categoria" id="categoria">
+                                                <option value="Menores">Entrada Menores</option>
+                                                <option value="Mayores">Entrada Mayores</option>
+                                                <option value="General">Entrada General</option>
+                                                <option value="CaC">Entrada CaC</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <input type="text" class="form-control result" id="total"
+                                                placeholder="Total a pagar:$" disabled>
+                                        </div>
+
+                                        <div>
+
+                                            <button type="button" id="boton2" onclick="resumen()">Total a pagar</button>
+                                            <button type="reset" id="boton1">Eliminar</button>
+                                            <button disabled type="button" id="botoncompra">COMPRAR</button>
+
+                                        </div>
+                                    </div>
+        </form>
+
+        <script>
+            let boton1 = document.getElementById("botoncompra")
+            let cajasTexto = document.querySelectorAll(".cajasTexto")
+
+            cajasTexto[1].addEventListener("keyup", () => {
+                if (cajasTexto[0].value != "" && cajasTexto[1].value != "") {
+                    document.getElementById("botoncompra").disabled = false
+                } else {
+                    document.getElementById("botoncompra").disabled = true
+                }
+            })
+
+            boton1.addEventListener("click", (event) => {
+                event.preventDefault()
+
+            })
+        </script>
     </div>
 
 

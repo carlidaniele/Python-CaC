@@ -93,7 +93,10 @@ p {
     color: antiquewhite;
 }
 
-
+#compra{
+    display: block;
+    background-color: rgb(30, 137, 61);
+}
 
 
 footer {
